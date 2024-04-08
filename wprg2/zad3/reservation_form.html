@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz rezerwacji hotelu</title>
+</head>
+<body>
+<h2>Formularz rezerwacji hotelu</h2>
+<form action="reservation_summary.php" method="post">
+    <label for="num_of_people">Ilość osób:</label>
+    <select name="num_of_people" id="num_of_people" required>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select><br><br>
+    <div id="people_container"></div>
+
+    <button type="submit">Zarezerwuj</button>
+</form>
+
+<script>
+    document.getElementById('num_of_people').addEventListener('change', function() {
+        var num_of_people = parseInt(this.value);
+        var container = document.getElementById('people_container');
+        container.innerHTML = '';
+
+        for (var i = 0; i < num_of_people; i++) {
+            var div = document.createElement('div');
+            div.innerHTML = '<h3>Osoba ' + (i + 1) + '</h3>' +
+                '<label for="first_name_' + i + '">Imię:</label>' +
+                '<input type="text" name="first_name[]" id="first_name_' + i + '" required><br><br>' +
+                '<label for="last_name_' + i + '">Nazwisko:</label>' +
+                '<input type="text" name="last_name[]" id="last_name_' + i + '" required><br><br>' +
+                '<label for="address_' + i + '">Adres:</label>' +
+                '<input type="text" name="address[]" id="address_' + i + '" required><br><br>' +
+                '<label for="credit_card_' + i + '">Nr karty kredytowej:</label>' +
+                '<input type="text" name="credit_card[]" id="credit_card_' + i + '" required><br><br>' +
+                '<label for="email_' + i + '">Email:</label>' +
+                '<input type="email" name="email[]" id="email_' + i + '" required><br><br>' +
+                '<label for="arrival_date_' + i + '">Data przyjazdu:</label>' +
+                '<input type="date" name="arrival_date[]" id="arrival_date_' + i + '" required><br><br>' +
+                '<label for="arrival_time_' + i + '">Godzina przyjazdu:</label>' +
+                '<input type="time" name="arrival_time[]" id="arrival_time_' + i + '" required><br><br>' +
+                '<label for="child_bed_' + i + '">Dostawka dla dziecka:</label>' +
+                '<input type="checkbox" name="child_bed_' + i + '" id="child_bed_' + i + '"><br><br>' +
+                '<label for="amenities_' + i + '">Udogodnienia:</label><br>' +
+                '<input type="checkbox" name="amenities_' + i + '[]" value="klimatyzacja"> Klimatyzacja<br>' +
+                '<input type="checkbox" name="amenities_' + i + '[]" value="popielniczka"> Popielniczka<br><br>';
+            container.appendChild(div);
+        }
+    });
+</script>
+</body>
+</html>

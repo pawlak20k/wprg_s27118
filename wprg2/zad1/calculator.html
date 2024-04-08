@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosty kalkulator</title>
+</head>
+<body>
+<h2>Kalkulator</h2>
+<form action="calculator.php" method="post">
+    <input type="number" name="number1" placeholder="Podaj pierwszą liczbę" required><br><br>
+    <input type="number" name="number2" placeholder="Podaj drugą liczbę" required><br><br>
+    <select name="operation" required>
+        <option value="add">Dodawanie</option>
+        <option value="subtract">Odejmowanie</option>
+        <option value="multiply">Mnożenie</option>
+        <option value="divide">Dzielenie</option>
+    </select><br><br>
+    <button type="submit">Oblicz</button>
+</form>
+</body>
+</html>
