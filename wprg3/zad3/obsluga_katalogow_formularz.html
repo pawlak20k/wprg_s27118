@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsługa katalogów</title>
+</head>
+<body>
+<h2>Obsługa katalogów</h2>
+<form action="obsluga_katalogow.php" method="POST">
+    <label for="sciezka">Ścieżka:</label><br>
+    <input type="text" id="sciezka" name="sciezka" placeholder="np. ./php/images/network"><br><br>
+    <label for="katalog">Nazwa katalogu:</label><br>
+    <input type="text" id="katalog" name="katalog"><br><br>
+    <label for="operacja">Operacja:</label><br>
+    <select id="operacja" name="operacja">
+        <option value="read">Odczytaj (domyślnie)</option>
+        <option value="delete">Usuń</option>
+        <option value="create">Utwórz</option>
+    </select><br><br>
+    <input type="submit" value="Wykonaj">
+</form>
+</body>
+</html>
