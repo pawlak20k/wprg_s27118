@@ -1,0 +1,3 @@
+http://google.com/;google
+http://instagram.com/;insta
+http://youtube.com/;youtube
